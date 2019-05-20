@@ -1,0 +1,73 @@
+/* navbar */
+.navbar {
+  background: #2C4395;
+  font-family: 'Nunito', sans-serif;
+}
+/* liens menu */
+.menu-items {
+  color: white !important;
+  transition: color 0.3s;
+}
+.menu-items:hover {
+  color: #7EE94C !important;
+}
+.logo {
+  font-family: 'Lobster', sans-serif;
+  font-size: 32px;
+  color: white;
+}
+.logo:hover {
+  color: white;
+}
+.don {
+  color: #7EE94C;
+  border: 2px solid #7EE94C;
+  border-radius: 20px;
+  transition: color 0.3s;
+  transition: background-color 0.3s;
+}
+.don:hover {
+  color: #2C4395;
+  background-color: #7EE94C;
+}
+/* menu burger */
+#wrapper {
+  background: #7EE94C;
+  display: inline-block;
+  border-radius: 500px;
+  margin: 0px;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+}
+.top {
+  top: 18%;
+}
+.middle {
+  top: 48%;
+}
+.bottom {
+  top: 78%;
+}
+.icon.close .top {
+  transform: rotate(45deg);
+  top: 48%;
+}
+.icon.close .middle, .icon.close .bottom {
+  transform: rotate(-45deg);
+  top: 48%;
+}
