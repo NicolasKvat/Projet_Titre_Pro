@@ -71,3 +71,38 @@
   transform: rotate(-45deg);
   top: 48%;
 }
+/* carousel */
+ /* .owl-carousel {
+  height: 600px;;
+  width: 900px;
+}
+.owl-item {
+  display: flex;
+  justify-content: center;
+}
+.item1 {
+  height: 600px;
+  width: 900px;
+}
+.item2 {
+  height: 600px;
+  width: 900px;
+}
+.item3 {
+  height: 600px;
+  width: 900px;
+}
+.item4 {
+  height: 600px;
+  width: 900px;
+} */
+.img {
+  background: red;
+  object-fit: cover;
+  /* height: 710px; */
+}
+/* main */
+h1 {
+  font-family: 'Dosis', sans-serif;
+  color: #6F6F6F;
+}
