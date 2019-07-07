@@ -115,23 +115,14 @@
 }
 .slogan {
   font-style: italic;
+  font-size: 26px;
   text-shadow: 1px 1px 2px black;
 }
-/* .descript-img1 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_4659.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+h1, h2, p, small {
+  font-size: 1.5vw;
+  font-family: 'Dosis', sans-serif;
 }
-.descript-img2 {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/descript-img1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-} */
-h2, p {
+small {
   font-size: 26px;
   font-family: 'Dosis', sans-serif;
   color: #6F6F6F;
@@ -142,24 +133,29 @@ h3 {
   .descript-title {
   background: #7CB342;
 }
- .descript-img1 {
-  background-image: url("../img/img_6809.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+/* actualité */
+#titleOfDay {
+  border-bottom: 2px solid #70C24A;
+  background-color: #7CB342;
+  font-size: 2vw;
 }
-.descript-img2 {
-  background-image: url("../img/img_4679.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.actuality {
+  background: #70C24A;
+  border-radius: 20px;
 }
-/* Media query */
-@media screen and (min-width: 1200px) {
-  .img {
-    object-fit: cover;
-    height: 710px;
-  }
+.newsText {
+  font-size: 16px;
+}
+.news {
+    border-bottom: 1px solid #E5E5E5;
+}
+.twitter {
+    border-left: 1px solid #E5E5E5;
+}
+.twitter-timeline {
+    position: -webkit-sticky!important;
+    position: sticky !important;
+    top: 10px !important;
 }
 .thanks {
   height: 350px;
@@ -192,4 +188,30 @@ transition: all .2s ease-in-out;
 }
 .social:hover {
   transform: scale(1.2);
+}
+/* Media query */
+/*@media screen and (max-width: 767px) {
+    
+}*/
+@media screen and (max-width: 767px) {
+    #textOfArticleOfDay {
+        display: none;
+    }
+    #titleOfDay, .newsTitle, #thanksText {
+        font-size: 18px;
+        border-bottom: none;
+    }
+    .newsImg {
+        height: auto !important;
+        text-align: center;
+    }
+    .newsText {
+        display: none;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    .twitter {
+        display: none !important;
+    }
 }

@@ -45,10 +45,10 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav d-flex justify-content-center align-items-center">
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-2 pr-2 m-2">Accueil</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-2 pr-2 m-2">Galerie</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-2 pr-2 m-2">Contact</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-2 pr-2 m-2">À propos</a>
+                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Accueil</a>
+                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
+                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Contact</a>
+                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
                 <a href="#" class="don1 text-decoration-none font-weight-bold pl-4 pr-4 pt-1 pb-1 m-4">Faire un don</a>
               </div>
             </div>
@@ -93,6 +93,7 @@
               <p class="text-center text-white font-weight-bold p-4 m-0">Merci infiniment pour votre soutien depuis notre création. Vous êtes les premiers responsables de notre développement. Ensemble nous sommes plus forts.</p>
             </div>
           </div>
+          <!-- <a class="twitter-timeline" data-width="320" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   -->
       </main>
       <!-- footer -->
       <footer class="footer mt-md-2 d-flex justify-content-center align-items-center flex-column">
