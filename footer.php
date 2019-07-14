@@ -11,5 +11,5 @@
           <img src="assets/img/twitter.png" alt="">
         </a>
       </div>
-      <p class="text-white">Chambly International©</p>
+      <p class="text-white" id="chamblyCopyright">Chambly International©</p>
     </footer>

@@ -19,8 +19,10 @@
       </div>
     <div class="d-flex flex-md-row justify-content-center">
       <div class="col-md-9 d-flex mr-md-3 m-0 ml-0 p-0 flex-column justify-content-center" id="newsContainer">
-        <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img class="newsImg img-fluid" src="assets/img/img_5034.jpg" alt="">
+        <div class="d-flex flex-md-row flex-column justify-content-center p-0 my-4">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -32,7 +34,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -44,7 +48,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -56,7 +62,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -68,7 +76,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -80,7 +90,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -92,7 +104,9 @@
           </div>
         </div>
           <div class="col d-flex flex-md-row flex-column justify-content-center p-0 my-4">
-          <img  src="assets/img/img_5034.jpg" alt="">
+          <div class="d-flex justify-content-center justify-content-md-start">
+            <img class="newsImg" src="assets/img/img_5034.jpg" alt="">
+          </div>
           <div class="news col p-0">
             <h2 class="newsTitle font-weight-bold pl-4">Lorem ipsum</h2>
             <p class="newsText pl-4">Lorem ipsum dolor sit amet, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
@@ -108,11 +122,11 @@
           <a class="twitter-timeline" data-width="300" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
-    <!-- donation -->
+<!--     donation 
     <div class="row d-flex justify-content-center">
       <div class="col thanks mt-2 d-flex p-0 justify-content-center align-items-center flex-column">
         <p class="text-center text-white font-weight-bold p-4 m-0" id="thanksText">Merci infiniment pour votre soutien depuis notre création. Vous êtes les premiers responsables de notre développement. Ensemble nous sommes plus forts.</p>
         <a href="#" class="don2 text-decoration-none font-weight-bold px-4 py-1">Faire un don</a>
       </div>
-    </div>
+    </div>-->
     </main>

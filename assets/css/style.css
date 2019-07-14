@@ -3,7 +3,6 @@
 .navbar {
   background: #70C24A;
   font-family: 'Nunito', sans-serif;
-  position: fixed;
 }
 /* liens menu */
 .menu-items {
@@ -99,9 +98,15 @@
 .img {
   object-fit: cover;
 }
-/* main */
+.rowTitle {
+   background-color: #7CB342;
+}
+.titleOfPage {
+   border-bottom: 2px solid #70C24A;
+}
+/* main actu */
 .baniere-title {
-  height: 710px;
+  height: 760px;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/6L8A6693.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -130,6 +135,11 @@ small {
 h3 {
   font-family: 'Dosis', sans-serif;
 }
+span {
+  font-family: 'Dosis', sans-serif;
+  color: white !important;
+  text-decoration: none !important;
+}
   .descript-title {
   background: #7CB342;
 }
@@ -157,7 +167,7 @@ h3 {
     position: sticky !important;
     top: 10px !important;
 }
-.thanks {
+#thanks {
   height: 350px;
   width: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_7023.jpg");
@@ -167,6 +177,9 @@ h3 {
   background-attachment: local, fixed;
   text-shadow: 1px 1px 2px black;
 }
+#thanks .don2 {
+    display: none;
+}
 .donation {
   height: 350px;
   width: 100%;
@@ -175,6 +188,55 @@ h3 {
   background-position: top;
   background-size: cover;
   background-attachment: local, fixed;
+}
+/*Galerie*/
+#galerieMain {
+    overflow-x: hidden;
+}
+.imgLink {
+    display: block;
+    width: 300px;
+    height: 225px;
+    background-image: url("../img/img_5034.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    text-decoration: none !important;
+    text-shadow: 1px 1px 2px black;
+    transition: 0.5s is ease-in-out;
+}
+.darkOverlay{
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 225px;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.darkOverlay:hover {
+    opacity: 0.5 !important;
+}
+.titleImg {
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    color: #212529;
+}
+.titleImg:hover {
+    color: #212529; 
+}
+/*about us*/
+.descript-img1 {
+    background-image: url("../img/img_6809.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.descript-img2 {
+    background-image: url("../img/img_4679.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 /* footer */
 footer {
@@ -208,7 +270,15 @@ transition: all .2s ease-in-out;
     .newsText {
         display: none;
     }
-
+    .descript-goal p, #thanks p, #chamblyCopyright {
+        font-size: 18px;
+    }
+    #thanks .don2 {
+    display: block;
+}
+    .descript-title {
+        border-bottom: 2px solid #70C24A;
+    }
 }
 @media screen and (max-width: 1000px) {
     .twitter {

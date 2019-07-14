@@ -17,67 +17,29 @@
     <!-- container bootstrap -->
     <div class="container-fluid m-0 p-0">
       <!-- header -->
-      <header>
-        <!-- navbar -->
-        <nav class="navbar d-flex flex-row justify-content-center align-items-center shadow">
-          <div class="row w-100 d-flex flex-row justify-content-between align-items-center">
-            <!-- logo -->
-            <div class="col-2 d-flex justify-content-center align-items-center">
-              <a class="logo text-center text-decoration-none" href="#">Logo</a>
-            </div>
-            <!-- menu items -->
-            <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">
-              <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Accueil</a>
-              <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Galerie</a>
-              <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Contact</a>
-              <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>
-              <a href="#" class="don1 text-decoration-none font-weight-bold pl-4 pr-4 pt-1 pb-1">Faire un don</a>
-            </div>
-            <!-- menu burger -->
-
-              <div id="wrapper" class="d-xl-none" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <div class="circle icon">
-                      <span class="line top"></span>
-                      <span class="line middle"></span>
-                      <span class="line bottom"></span>
-                  </div>
-              </div>
-
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav d-flex justify-content-center align-items-center">
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Accueil</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Contact</a>
-                <a href="#" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
-                <a href="#" class="don1 text-decoration-none font-weight-bold pl-4 pr-4 pt-1 pb-1 m-4">Faire un don</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <?php include_once 'header.php'; ?>
       <!-- main -->
       <main class="main d-md-flex justify-content-center align-items-center flex-column">
-        <!-- Bannière -->
-        <div class="baniere-title w-100 mb-xl-2 d-flex justify-content-center align-items-center flex-column">
-          <h1 class="title m-0 p-2 d-flex align-items-center justify-content-center text-center text-white font-weight-bold">Chambly International</h1>
-          <p class="slogan m-0 text-white text-center">"Un geste pour eux, c'est un geste pour vous."</p>
+        <div class="row rowTitle w-100 m-0 p-4 d-flex justify-content-center mb-md-4">
+            <div class="col-10">
+                <h2 class="titleOfPage d-block font-weight-bold px-4 py-2 m-4 text-white display-sm-4 text-center">À propos</h2>
+            </div>
         </div>
         <!-- présentation -->
           <div class="row descript-goal m-0 d-flex justify-content-center">
-            <div class="col-xl-4 mt-xl-2 mb-xl-2 mr-xl-2 descript-title d-flex justify-content-center flex-column">
+            <div class="col-md-4  my-md-2 mr-md-2 descript-title d-flex justify-content-center flex-column">
               <h2 class="font-weight-bold p-4 text-white">Notre histoire</h2>
               <p class="p-4 text-white">
                 L’association Chambly International a vu le jour en Septembre 2012. Créée par Youssef Zaoui, jeune étudiant de 19 ans (au moment de la création) suite à son voyage humanitaire au Gabon pour un projet citoyen avec son école de commerce. Cette expérience le marque à jamais et il décide en rentrant en France de créer sa propre association humanitaire. Il espère venir en aide aux personnes en situation précaire à travers le monde. L’association compte désormais une vingtaine d’adhérents et une cinquantaine de bénévoles sur des évènements ponctuels.
               </p>
             </div>
-
-            <div class="col-xl-7 mt-xl-2 mb-xl-2 ml-xl-2 bg-secondary descript-img1 d-flex justify-content-center flex-column">
+            <div class="col-md-7 my-md-2 ml-md-2 bg-secondary descript-img1 d-flex justify-content-center flex-column">
             </div>
           </div>
           <div class="row descript-goal m-0 d-flex justify-content-center">
-            <div class="col-xl-7 mt-xl-2 mb-xl-2 mr-xl-2 bg-secondary descript-img2 d-flex justify-content-center flex-column">
+            <div class="col-md-7 my-md-2 mr-md-2 bg-secondary descript-img2 d-flex justify-content-center flex-column">
             </div>
-            <div class="col-xl-4 mt-xl-2 mb-xl-2 ml-xl-2 descript-title d-flex justify-content-center flex-column">
+            <div class="col-md-4 my-md-2 ml-md-2 descript-title d-flex justify-content-center flex-column">
               <h2 class="font-weight-bold p-4 text-white">Nos Principaux Objectifs</h2>
               <p class="p-4 text-white">
                  En plus de venir en aide aux populations en difficultés à travers le monde, Chambly International intervient auprès des orphelins, des enfants en situation de handicap et des enfants vivant en zone géographique reculée à travers la promotion et la sensibilisation d’un accès à l’éducation pour tous. L’objectif n’est pas seulement d’amener la scolarisation aux enfants mais également de sensibiliser les acteurs étatiques et le grand public à l’importance de l’éducation pour les générations à venir et ce, sans aucune distinction.
@@ -86,35 +48,19 @@
           </div>
           <!-- donation -->
           <div class="row m-0 d-flex justify-content-center">
-            <div class="col-xl-4 donation mt-xl-2 mb-xl-2 mr-xl-2 d-flex justify-content-center align-items-center flex-column">
-              <a href="#" class="don2 text-decoration-none font-weight-bold pl-4 pr-4 pt-1 pb-1">Faire un don</a>
+            <div class="col-md-4 donation my-md-2 mr-md-2 d-none d-md-flex justify-content-center align-items-center flex-column">
+              <a href="#" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
             </div>
-            <div class="col-xl-7 thanks mt-xl-2 mb-xl-2 ml-xl-2 d-flex justify-content-center align-items-center flex-column">
+            <div class="col-md-7 my-md-2 ml-md-2 d-flex justify-content-center align-items-center flex-column" id="thanks">
               <p class="text-center text-white font-weight-bold p-4 m-0">Merci infiniment pour votre soutien depuis notre création. Vous êtes les premiers responsables de notre développement. Ensemble nous sommes plus forts.</p>
+                <a href="#" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
             </div>
           </div>
           <!-- <a class="twitter-timeline" data-width="320" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   -->
       </main>
       <!-- footer -->
-      <footer class="footer mt-md-2 d-flex justify-content-center align-items-center flex-column">
-        <div class="row d-flex justify-content-center align-items-center">
-          <a href="" class="social m-4">
-            <img src="assets/img/facebook(1).png" alt="">
-          </a>
-          <a href="" class="social m-4">
-            <img src="assets/img/instagram(1).png" alt="">
-          </a>
-          <a href="" class="social m-4">
-            <img src="assets/img/twitter.png" alt="">
-          </a>
-        </div>
-        <p class="text-white">Chambly International©</p>
-      </footer>
+      <?php include_once 'footer.php'; ?>
     </div>
-
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <?php include_once 'script.php'; ?>
   </body>
 </html>
