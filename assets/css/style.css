@@ -104,6 +104,34 @@
 .titleOfPage {
    border-bottom: 2px solid #70C24A;
 }
+/*Modal de connexion*/
+.modal-content {
+    background-color: #7CB342 !important;
+}
+.modal-header {
+    border-bottom: 2px solid #70C24A !important;
+}
+.btn {
+    font-family: 'Dosis', sans-serif;
+    border-radius: 20px;
+    border: 2px solid #70C24A !important;
+    transition: background-color 0.3s;
+    transition: box-shadow 0.3s;
+}
+.btn:hover {
+  background-color: #70C24A;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#submitRegister {
+    color: #70C24A;
+    transition: color 0.3s;
+}
+#submitRegister:hover {
+    color: white;
+}
+label, input {
+  font-family: 'Dosis', sans-serif !important;  
+}
 /* main actu */
 .baniere-title {
   height: 760px;
@@ -123,7 +151,7 @@
   font-size: 26px;
   text-shadow: 1px 1px 2px black;
 }
-h1, h2, p, small {
+h1, h2, h5, p, small, .btn {
   font-size: 1.5vw;
   font-family: 'Dosis', sans-serif;
 }

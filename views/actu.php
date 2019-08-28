@@ -1,4 +1,5 @@
-    <!-- main -->
+  <?php require_once 'views/header.php' ?>  
+<!-- main -->
     <main class="main d-md-flex justify-content-center align-items-center flex-column">
       <!-- Bannière -->
       <div class="baniere-title w-100 mb-xl-2 d-flex justify-content-center align-items-center flex-column">
@@ -122,11 +123,5 @@
           <a class="twitter-timeline" data-width="300" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
-<!--     donation 
-    <div class="row d-flex justify-content-center">
-      <div class="col thanks mt-2 d-flex p-0 justify-content-center align-items-center flex-column">
-        <p class="text-center text-white font-weight-bold p-4 m-0" id="thanksText">Merci infiniment pour votre soutien depuis notre création. Vous êtes les premiers responsables de notre développement. Ensemble nous sommes plus forts.</p>
-        <a href="#" class="don2 text-decoration-none font-weight-bold px-4 py-1">Faire un don</a>
-      </div>
-    </div>-->
     </main>
+<?php require_once 'views/footer.php' ?>
