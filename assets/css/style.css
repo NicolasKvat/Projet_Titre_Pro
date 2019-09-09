@@ -1,108 +1,108 @@
 
 /* navbar */
 .navbar {
-  background: #70C24A;
-  font-family: 'Nunito', sans-serif;
+    background: #70C24A;
+    font-family: 'Nunito', sans-serif;
 }
 /* liens menu */
 .menu-items {
-  text-align: center;
-  height: 26px;
-  width: auto;
-  border-radius: 20px;
-  border: 2px solid #70C24A;
-  color: white !important;
-  transition: background-color 0.3s;
-  transition: box-shadow 0.3s;
+    text-align: center;
+    height: 26px;
+    width: auto;
+    border-radius: 20px;
+    border: 2px solid #70C24A;
+    color: white !important;
+    transition: background-color 0.3s;
+    transition: box-shadow 0.3s;
 }
 .menu-items:hover {
-  background-color: #7CB342;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #7CB342;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .logo {
-  font-family: 'Lobster', sans-serif;
-  font-size: 32px;
-  color: white !important;
-  text-decoration: none;
+    font-family: 'Lobster', sans-serif;
+    font-size: 32px;
+    color: white !important;
+    text-decoration: none;
 }
 .don1 {
-  color: #70C24A;
-  border: 2px solid #70C24A;
-  border-radius: 20px;
-  background: white;
-  transition: color 0.3s;
-  transition: background-color 0.3s;
-  width: 150px;
-  height: 36px;
+    color: #70C24A;
+    border: 2px solid #70C24A;
+    border-radius: 20px;
+    background: white;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+    width: 150px;
+    height: 36px;
 }
 .don1:hover {
-  color: white;
-  background-color: #7CB342;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-color: #7CB342;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .don2 {
-  color: #70C24A;
-  border: 2px solid #70C24A;
-  border-radius: 20px;
-  transition: color 0.3s;
-  transition: background-color 0.3s;
-  width: 150px;
-  height: 36px;
+    color: #70C24A;
+    border: 2px solid #70C24A;
+    border-radius: 20px;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+    width: 150px;
+    height: 36px;
 }
 .don2:hover {
-  color: white;
-  background-color: #7CB342;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-color: #7CB342;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 /* menu burger */
 #wrapper {
-  background: #7EE94C;
-  display: inline-block;
-  border-radius: 500px;
-  margin: 0px;
-  position: relative;
-  padding: 10px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #7EE94C;
+    display: inline-block;
+    border-radius: 500px;
+    margin: 0px;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .circle {
-  width: 20px;
-  height: 20px;
-  position: relative;
+    width: 20px;
+    height: 20px;
+    position: relative;
 }
 .line {
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: white;
-  border-radius: 8px;
-  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
 }
 .top {
-  top: 18%;
+    top: 18%;
 }
 .middle {
-  top: 48%;
+    top: 48%;
 }
 .bottom {
-  top: 78%;
+    top: 78%;
 }
 .icon.close .top {
-  transform: rotate(45deg);
-  top: 48%;
+    transform: rotate(45deg);
+    top: 48%;
 }
 .icon.close .middle, .icon.close .bottom {
-  transform: rotate(-45deg);
-  top: 48%;
+    transform: rotate(-45deg);
+    top: 48%;
 }
 .img {
-  object-fit: cover;
+    object-fit: cover;
 }
 .rowTitle {
-   background-color: #7CB342;
+    background-color: #7CB342;
 }
 .titleOfPage {
-   border-bottom: 2px solid #70C24A;
+    border-bottom: 2px solid #70C24A;
 }
 /*Modal de connexion*/
 .modal-content {
@@ -119,8 +119,8 @@
     transition: box-shadow 0.3s;
 }
 .btn:hover {
-  background-color: #70C24A;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #70C24A;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 #submitRegister {
     color: #70C24A;
@@ -130,59 +130,63 @@
     color: white;
 }
 label, input {
-  font-family: 'Dosis', sans-serif !important;  
+    font-family: 'Dosis', sans-serif !important;  
 }
 /* main actu */
 .baniere-title {
-  height: 760px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/6L8A6693.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: local, fixed;
+    height: 760px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/6L8A6693.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: local, fixed;
 }
 .title {
-  font-family: 'Dosis', sans-serif;
-  font-size: 56px;
-  text-shadow: 1px 1px 2px black;
+    font-family: 'Dosis', sans-serif;
+    font-size: 56px;
+    text-shadow: 1px 1px 2px black;
 }
 .slogan {
-  font-style: italic;
-  font-size: 26px;
-  text-shadow: 1px 1px 2px black;
+    font-style: italic;
+    font-size: 26px;
+    text-shadow: 1px 1px 2px black;
 }
 h1, h2, h5, p, small, .btn {
-  font-size: 1.5vw;
-  font-family: 'Dosis', sans-serif;
+    font-size: 1.5vw;
+    font-family: 'Dosis', sans-serif;
 }
 small {
-  font-size: 26px;
-  font-family: 'Dosis', sans-serif;
-  color: #6F6F6F;
+    font-size: 26px;
+    font-family: 'Dosis', sans-serif;
+    color: #6F6F6F;
 }
 h3 {
-  font-family: 'Dosis', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 span {
-  font-family: 'Dosis', sans-serif;
-  color: white !important;
-  text-decoration: none !important;
+    font-family: 'Dosis', sans-serif;
+    color: white !important;
+    text-decoration: none !important;
 }
-  .descript-title {
-  background: #7CB342;
+.descript-title {
+    background: #7CB342;
 }
 /* actualité */
 #titleOfDay {
-  border-bottom: 2px solid #70C24A;
-  background-color: #7CB342;
-  font-size: 2vw;
+    border-bottom: 2px solid #70C24A;
+    background-color: #7CB342;
+    font-size: 2vw;
 }
 .actuality {
-  background: #70C24A;
-  border-radius: 20px;
+    background: #70C24A;
+    border-radius: 20px;
 }
 .newsText {
-  font-size: 16px;
+    font-size: 16px;
+}
+.galleryImg {
+    width: 350px;
+    height: 225px; 
 }
 .news {
     border-bottom: 1px solid #E5E5E5;
@@ -196,26 +200,26 @@ span {
     top: 10px !important;
 }
 #thanks {
-  height: 350px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_7023.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: local, fixed;
-  text-shadow: 1px 1px 2px black;
+    height: 350px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_7023.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: local, fixed;
+    text-shadow: 1px 1px 2px black;
 }
 #thanks .don2 {
     display: none;
 }
 .donation {
-  height: 350px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_7023.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: local, fixed;
+    height: 350px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/IMG_7023.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: local, fixed;
 }
 /*Galerie*/
 #galerieMain {
@@ -268,16 +272,16 @@ span {
 }
 /* footer */
 footer {
-  width: 100%;
-  height: 200px;
-  background: #2A3847;
+    width: 100%;
+    height: 200px;
+    background: #2A3847;
 }
 /* social */
 .social {
-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .social:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 /* Media query */
 /*@media screen and (max-width: 767px) {
@@ -302,8 +306,8 @@ transition: all .2s ease-in-out;
         font-size: 18px;
     }
     #thanks .don2 {
-    display: block;
-}
+        display: block;
+    }
     .descript-title {
         border-bottom: 2px solid #70C24A;
     }

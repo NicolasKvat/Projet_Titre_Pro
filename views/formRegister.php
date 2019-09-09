@@ -8,7 +8,7 @@
     </div>
     <!--formulaire d'inscription-->     
     <div class="row justify-content-center">                
-        <form name="form" action="formRegister.php" method="POST" class="col-11 col-md-6 form-group p-4 mb-4">
+        <form name="form" action="?page=Inscription" method="POST" class="col-11 col-md-6 form-group p-4 mb-4">
             <div class="form-group mb-4">
                 <!--nom-->
                 <label for="lastname" class='font-weight-bold'>Nom :</label>
@@ -35,7 +35,7 @@
                 <span class="errorFormRegister p-2 <?= isset($arrayOfErrors['passwordRegister']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['passwordRegister'] ?? '' ?></span>
             </div>
             <div class="p-0 d-flex justify-content-end">
-                <input type="submit" id='submitRegister' class="btn font-weight-bold mr-0" value="S'inscrire">  
+                <input type="submit" name="submitRegister" id='submitRegister' class="btn font-weight-bold mr-0" value="S'inscrire">  
             </div>  
         </form>
     </div>

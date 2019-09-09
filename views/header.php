@@ -43,7 +43,7 @@
                         <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">
                             <a href="?page=Accueil" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Accueil</a>
                             <a href="?page=Galerie" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Galerie</a>
-                            <a href="?page=À Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>           
+                            <a href="?page=À-Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>           
                             <div class="register d-flex flex-column">
                                 <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
                             </div>

@@ -6,8 +6,8 @@ $passwordPattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_?])([-+!*$@%_?
 $stringPattern = '/^[a-zA-ZéèôöîïçÉÈÎÏ \'-]+([-\'\s][a-zA-ZéèôöîïçÉÈÎÏ \'-][a-zéèôöîïç \']+)?$/';
 //   On test chaque input en fonction de son pattern et si ils ne correspondent pas on insert un message d'erreur
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
-$arrayOfErrors[];
-if ($_POST) {
+$arrayOfErrors = [];
+if ($_POST['submitRegister']) {
     if (!preg_match($emailPattern, $_POST['emailRegister'])) {
         $arrayOfErrors['emailRegister'] = 'Email invalide';
         $_POST['emailRegister'] = '';
