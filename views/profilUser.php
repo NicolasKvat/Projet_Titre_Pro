@@ -17,8 +17,6 @@ require_once 'header.php';
     <p><?= $user->getFirstName() ?></p>
     <h4 class='font-weight-bold my-2'>Email</h4>
     <p><?= $user->getEmail() ?></p>
-    <h4 class='font-weight-bold my-2'>Mot de passe</h4>
-    <p><?= $user->getPassword() ?></p>
     <h4 class='font-weight-bold my-2'>Status</h4>
     <p><?= $user->getidStatus() ?></p>  
 </div>

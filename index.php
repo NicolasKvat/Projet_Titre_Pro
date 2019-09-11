@@ -13,7 +13,12 @@ $routes = [
     'Liste-d\'articles' => 'controllers/articlesListController.php',
     'Ajouter-Article' => 'controllers/addArticleFormController.php',
     'Modifier-article' => 'controllers/updateArticleController.php',
-    'Supprimer-article' => 'views/confirmDeleteArticle.php'
+    'Supprimer-article' => 'views/confirmDeleteArticle.php',
+    'Détails-article' => 'controllers/detailArticleController.php',
+    'Liste-d\'images' => 'controllers/fileGalleryListController.php',
+    'Ajouter-image' => 'controllers/addFileFormController.php',
+    'Modifier-image' => 'controllers/updateFileController.php',
+    'Supprimer-image' => 'views/confirmDeleteFile.php'
 ];
 
 //si un parametre page est passé dans le GET

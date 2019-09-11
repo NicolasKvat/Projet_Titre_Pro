@@ -4,10 +4,8 @@ session_start();
 require_once 'models/User.php';
 $user = new User();
 $user->setId($_GET['id']);
-$user->getUserById();
 
-
-if(!empty($_GET['delete'])){
+if(isset($_GET['delete'])){
 
     $id = $_GET['delete'];
     $user->deleteUser($id);

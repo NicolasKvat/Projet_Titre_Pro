@@ -15,7 +15,7 @@ $passwordPattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_?])([-+!*$@%_?
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
 $formError = [];
 $errorRegister = '';
-if ($_POST['updateForm']) {
+if (isset($_POST['updateForm'])) {
     // Si le champs lastName est vide
     if (empty($_POST['lastName'])) {
         $formError['lastName'] = 'Veuillez entrer un nom.';
@@ -45,16 +45,6 @@ if ($_POST['updateForm']) {
         // Si le email est correct
     } else {
         $email = trim($_POST['email']);
-    }
-    // Si le champs passWord est vide
-    if (empty($_POST['passWord'])) {
-        $formError['passWord'] = 'Veuillez entrer un mot de passe.';
-        // Si le passWord est incorrect
-    } elseif (!preg_match($passwordPattern, $_POST['passWord'])) {
-        $formError['passWord'] = 'Veuillez entrer un mot de passe valide.';
-        // Si le passWord est correct
-    } else {
-        $passWord = password_hash($_POST['passWord'], PASSWORD_BCRYPT);
     }
     // Si le champs status est vide
     if (!is_numeric($_POST['status']) || $_POST['status'] < 1 || $_POST['status'] > 2) {

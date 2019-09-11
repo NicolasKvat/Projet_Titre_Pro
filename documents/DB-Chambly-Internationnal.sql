@@ -4,31 +4,6 @@
 
 
 #------------------------------------------------------------
-# Table: Article
-#------------------------------------------------------------
-
-CREATE TABLE Article(
-        id      Int  Auto_increment  NOT NULL ,
-        title   Varchar (100) NOT NULL ,
-        text    Text NOT NULL ,
-        picture Varchar (100) NOT NULL
-	,CONSTRAINT Article_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Gallery
-#------------------------------------------------------------
-
-CREATE TABLE Gallery(
-        id      Int  Auto_increment  NOT NULL ,
-        picture Varchar (100) NOT NULL ,
-        title   Varchar (100) NOT NULL
-	,CONSTRAINT Gallery_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: status
 #------------------------------------------------------------
 
@@ -57,29 +32,32 @@ CREATE TABLE User(
 
 
 #------------------------------------------------------------
-# Table: ajouter
+# Table: Article
 #------------------------------------------------------------
 
-CREATE TABLE ajouter(
-        id      Int NOT NULL ,
-        id_User Int NOT NULL
-	,CONSTRAINT ajouter_PK PRIMARY KEY (id,id_User)
+CREATE TABLE Article(
+        id      Int  Auto_increment  NOT NULL ,
+        title   Varchar (100) NOT NULL ,
+        text    Text NOT NULL ,
+        picture Varchar (100) NOT NULL ,
+        id_User Int
+	,CONSTRAINT Article_PK PRIMARY KEY (id)
 
-	,CONSTRAINT ajouter_Article_FK FOREIGN KEY (id) REFERENCES Article(id)
-	,CONSTRAINT ajouter_User0_FK FOREIGN KEY (id_User) REFERENCES User(id)
+	,CONSTRAINT Article_User_FK FOREIGN KEY (id_User) REFERENCES User(id) ON DELETE SET NULL
 )ENGINE=InnoDB;
 
 
 #------------------------------------------------------------
-# Table: insérer
+# Table: Gallery
 #------------------------------------------------------------
 
-CREATE TABLE inserer(
-        id      Int NOT NULL ,
+CREATE TABLE Gallery(
+        id      Int  Auto_increment  NOT NULL ,
+        picture Varchar (100) NOT NULL ,
+        title   Varchar (100) NOT NULL ,
         id_User Int NOT NULL
-	,CONSTRAINT inserer_PK PRIMARY KEY (id,id_User)
+	,CONSTRAINT Gallery_PK PRIMARY KEY (id)
 
-	,CONSTRAINT inserer_Gallery_FK FOREIGN KEY (id) REFERENCES Gallery(id)
-	,CONSTRAINT inserer_User0_FK FOREIGN KEY (id_User) REFERENCES User(id)
+	,CONSTRAINT Gallery_User_FK FOREIGN KEY (id_User) REFERENCES User(id)
 )ENGINE=InnoDB;
 

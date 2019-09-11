@@ -10,13 +10,13 @@ $stringPattern = '/^[a-zA-Záàâäãåçéèêëíìîïñóòôöõúùûüý�
 //   On test chaque input en fonction de son pattern et si ils ne correspondent pas on insert un message d'erreur
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
 $formError = [];
-if ($_POST['addArticle']) {
+if (isset($_POST['addArticle'])) {
     // Si le champs titre est vide
     if (empty($_POST['title'])) {
         $formError['title'] = 'Veuillez entrer un titre.';
         // Si le titre est incorrect
-    } elseif (!preg_match($stringPattern, $_POST['title'])) {
-        $formError['title'] = 'Veuillez entrer un titre valide.';
+//    } elseif (!preg_match($stringPattern, $_POST['title'])) {
+//        $formError['title'] = 'Veuillez entrer un titre valide.';
         // Si le titre est correct
     } else {
         $title = trim(strip_tags($_POST['title']));

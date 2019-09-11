@@ -71,11 +71,10 @@ class User {
         //méthode qui met à jour l'utilisateur
     public function updateUser($id) {
         //preparation de la requete
-        $query = $this->db->prepare("UPDATE `User` SET lastName = :lastName, firstName = :firstName, email = :email, passWord = :passWord, idStatus = :idStatus WHERE id = :id;");
+        $query = $this->db->prepare("UPDATE `User` SET lastName = :lastName, firstName = :firstName, email = :email, idStatus = :idStatus WHERE id = :id;");
         $query->bindValue(':lastName', $_POST['lastName']);
         $query->bindValue(':firstName', $_POST['firstName']);
         $query->bindValue(':email', $_POST['email']);
-        $query->bindValue(':passWord', $_POST['passWord']);
         $query->bindValue(':idStatus', $_POST['status']);
         $query->bindValue(':id', $id);
         //execution de la requete

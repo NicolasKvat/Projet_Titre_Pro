@@ -35,7 +35,7 @@ require_once 'views/header.php';
                     <p class="newsText pl-4"><?= implode(' ', $tab) . '...' ?></p>
                 </div>
                 <div class="d-flex flex-column justify-content-center">
-                    <a href="?page=detailArticle&id=<?= $article->id ?>" class="btn btn-primary m-2">Voir</a>
+                    <a href="?page=Détails-article&id=<?= $article->id ?>" class="btn btn-primary m-2">Voir</a>
                     <a href="?page=Modifier-article&id=<?= $article->id ?>" class="btn btn-secondary m-2">Modifier</a>
                     <a href="?page=Supprimer-article&id=<?= $article->id ?>" class="btn btn-danger m-2">Supprimer</a>
                 </div>

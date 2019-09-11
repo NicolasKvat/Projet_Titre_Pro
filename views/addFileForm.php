@@ -8,18 +8,12 @@ require_once 'views/header.php';
 </div>
 <?php require_once 'navbarAdminSpace.php'; ?>
 <div class="row flex-column align-items-center">
-    <form name="form" action="?page=Modifier-article&id=<?= $Article->getId() ?>" method="POST" enctype="multipart/form-data" class="col-11 col-md-6 form-group p-4 mb-4">
+    <form name="form" action="" method="POST" enctype="multipart/form-data" class="col-11 col-md-6 form-group p-4 mb-4">
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--titre-->
-            <label for="title" class='font-weight-bold'>titre de l'article :</label>
-            <input type="text" class="form-control" id='title' name="title" value="<?= $Article->getTitle() ?>" required>
+            <label for="title" class='font-weight-bold'>Titre de l'image :</label>
+            <input type="text" class="form-control" id='title' name="title" required>
             <span class="errorFormRegister p-2 <?= isset($formError['title']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['title'] ?? '' ?></span>
-        </div>
-        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
-            <!--texte-->
-            <label for="text" class='font-weight-bold'>texte :</label>
-            <textarea class="form-control" id="text" name="text" required><?= $Article->getText() ?></textarea>
-            <span class="errorFormRegister p-2 <?= isset($formError['text']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['text'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--image-->
@@ -42,11 +36,12 @@ require_once 'views/header.php';
 
         </div>
         <div class="m-3 p-0 d-flex justify-content-around">
-            <a href="?page=Liste-d'articles" class="btn btn-outline-danger">Retour</a>
-            <input type="submit" id='submitRegister' name='updateArticle' class="btn btn-outline-primary font-weight-bold mr-0" value="Envoyer">              
+            <a href="?page=Espace-administrateur" class="btn btn-danger font-weight-bold">Retour</a>
+            <input type="submit" id='uploadFile' name='uploadFile' class="btn btn-primary font-weight-bold mr-0" value="Envoyer">              
         </div> 
     </form>
 </div>
+
 <?php
 require_once 'views/footerAdminSpace.php';
 ?>

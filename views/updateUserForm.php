@@ -28,13 +28,6 @@ require_once 'header.php';
             <input type="text" class="form-control" name="email" value="<?=isset($formError['email']) ? '' :  $user->getEmail() ?? ''; ?>" required>
             <span class="errorFormRegister p-2 <?= isset($formError['email']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['email'] ?? '' ?></span>
         </div>
-        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
-            <!--mot de passe-->
-            <label for="passWord" class='font-weight-bold'>Mot de passe :</label>
-             <small>Le mot de passe doit contenir au minimum 8 caractères avec au moins une minuscule, une majuscule, un chiffre et un caractère spécial parmis la liste. (- + ! * $ @ % _ ?)</small>
-            <input type="text" class="form-control" name="passWord" value="<?=isset($formError['passWord']) ? '' :  $user->getPassWord() ?? ''; ?>" required>
-            <span class="errorFormRegister p-2 <?= isset($formError['passWord']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['passWord'] ?? '' ?></span>
-        </div>
         <div class="form-group">
             <label for="status" class='font-weight-bold'>Status</label>
             <select name="status" id="status" class="form-control">

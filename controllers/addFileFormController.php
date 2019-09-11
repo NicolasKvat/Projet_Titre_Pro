@@ -1,19 +1,13 @@
 <?php
-
-require_once 'models/Article.php';
 require_once 'models/User.php';
+require_once 'models/Gallery.php';
 $User = new User();
 $userList = $User->getAllUsers();
-$Article = new Article();
-$Article->setId($_GET['id']);
-$Article->getArticleById();
-// pattern pour la vérification du formulaire
-//$emailPattern = '^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/';
 $stringPattern = '/^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]{3,60}$/';
 //   On test chaque input en fonction de son pattern et si ils ne correspondent pas on insert un message d'erreur
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
 $formError = [];
-if (isset($_POST['updateArticle'])) {
+if (isset($_POST['uploadFile'])) {
     // Si le champs titre est vide
     if (empty($_POST['title'])) {
         $formError['title'] = 'Veuillez entrer un titre.';
@@ -23,13 +17,6 @@ if (isset($_POST['updateArticle'])) {
         // Si le titre est correct
     } else {
         $title = trim(strip_tags($_POST['title']));
-    }
-    // Si le champs texte est vide
-    if (empty($_POST['text'])) {
-        $formError['text'] = 'Veuillez entrer un texte.';
-        // Si le texte est incorrect
-    } else {
-        $text = trim(strip_tags(($_POST['text'])));
     }
     // Si le champs status est vide
     if (!is_numeric($_POST['idUser'])) {
@@ -59,17 +46,20 @@ if (isset($_POST['updateArticle'])) {
             // Vérifie le type MIME du fichier
             if (in_array($filetype, $allowed)) {
                 try {
-                    if (move_uploaded_file($_FILES["photo"]["tmp_name"], 'assets/uploadArticle/Article' . $Article->getId() . '.' . $imageFileType)) {
+                    // $targetFile = basename($_FILES["image"]["name"]);
+                    // $imageFileType = extention du fichier envoyé (jpg, png, ...) 
+                    if (move_uploaded_file($_FILES["photo"]["tmp_name"], 'assets/uploadFile/' . $filename)) {
+                        $Gallery = new Gallery();
                         $picture = $imageFileType;
                         //on appelle la methode qui insere l'article dans la BDD puis on detruit l'objet Article                      
-                        if ($Article->updateArticle($title, $text, $picture, $idUser)) {
-                            unset($Article);
-                            header('Location: ?page=Liste-d\'articles');
-                            exit();
-                        } else {
-                            $error = 'Ça marche paaaaaaaaaaaaaaa</br>aaaaaaaaaaaaaaaaaaaaaa</br>aaaaaaaaaaaaaaaaa</br>aaaaaaaaaaaaas :\'(';
+                        if ($Gallery->createFile($title, $picture, $idUser)) {
+                            rename('assets/uploadFile/' . $filename, 'assets/uploadFile/file' . $Gallery->getId() . '.' . $imageFileType);
                         }
                     }
+                    // Corresponds au chemin de l'image (ex : assets/uploadFile/file1.png)
+                    unset($Gallery);
+                    header('Location: ?page=Liste-d\'images');
+                    exit();
                 } catch (Exception $ex) {
                     die($ex->getMessage());
                 }
@@ -82,4 +72,5 @@ if (isset($_POST['updateArticle'])) {
         }
     }
 }
-require_once 'views/updateArticleForm.php';
+require_once 'views/addFileForm.php';
+

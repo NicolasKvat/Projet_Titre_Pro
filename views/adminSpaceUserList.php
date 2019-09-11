@@ -10,7 +10,7 @@ require_once 'header.php';
 <div class="d-flex justify-content-center">
     <a href="?page=Ajouter-utilisateur" class="btn btn-primary text-center font-weight-bold m-4">Ajouter un utilisateur</a>
 </div>
-<table class="table table-bordered text-center">
+<table class="table table-bordered  text-center">
     <thead>
     <th>ID</th>    
     <th>Nom</th>

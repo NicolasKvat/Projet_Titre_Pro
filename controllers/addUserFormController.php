@@ -5,8 +5,8 @@ require_once 'models/User.php';
 $status = new Status();
 $statusList = $status->getAllStatus();
 $user = new User();
-$user->setId($_GET['id']);
-$user->getUserById();
+//$user->setId($_GET['id']);
+//$user->getUserById();
 // pattern pour la vérification du formulaire
 $emailPattern = '/^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/';
 $stringPattern = '/^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]{3,60}$/';
@@ -15,7 +15,7 @@ $passwordPattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_?])([-+!*$@%_?
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
 $formError = [];
 $errorRegister = '';
-if ($_POST['registerForm']) {
+if (isset($_POST['registerForm'])) {
     // Si le champs lastName est vide
     if (empty($_POST['lastName'])) {
         $formError['lastName'] = 'Veuillez entrer un nom.';

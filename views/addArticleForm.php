@@ -13,19 +13,19 @@ require_once 'views/header.php';
             <!--titre-->
             <label for="title" class='font-weight-bold'>titre de l'article :</label>
             <input type="text" class="form-control" id='title' name="title" value="<?= $title ?? "" ?>" required>
-            <span class="help-block"><?= $formError['title'] ?? "" ?></span>
+            <span class="errorFormRegister p-2 <?= isset($formError['title']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['title'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--texte-->
             <label for="text" class='font-weight-bold'>texte :</label>
             <textarea class="form-control" id="text" name="text" value="<?= $text ?? "" ?>" required></textarea>
-            <span class="help-block"><?= $formError['text'] ?? "" ?></span>
+            <span class="errorFormRegister p-2 <?= isset($formError['text']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['text'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--image-->
             <label for="fileUpload" class='font-weight-bold'>Image :</label>
             <input type="file" name="photo" id="fileUpload">
-            <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
+            <small><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 2 Mo.</small>
         </div>
         <div class="form-group">
             <label for="idUser" class='font-weight-bold'>ID de l'admin</label>

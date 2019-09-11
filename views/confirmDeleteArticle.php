@@ -1,8 +1,13 @@
 <?php
-
 require_once 'controllers/deleteArticleConfirmController.php';
 require_once 'header.php';
 ?>
+<div class="row rowTitle m-0 border-bottom p-4 d-flex justify-content-center border-0">
+    <div class="col-10">
+        <h1 class="titleOfPage d-block font-weight-bold px-4 py-2 m-4 text-white display-sm-4 text-center">Espace administrateur</h1>
+    </div>
+</div>
+<?php require_once 'navbarAdminSpace.php'; ?>
 <body class="text-center">
     <div class="row justify-content-center align-items-center">
         <div class="form p-5 shadow my-5">
@@ -21,4 +26,6 @@ require_once 'header.php';
             </div>
         </div>
     </div>
-<?php require_once 'footerAdminSpace.php';
+    <?php
+    require_once 'footerAdminSpace.php';
+    
