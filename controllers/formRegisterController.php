@@ -1,7 +1,4 @@
 <?php
-if (!isset($_SESSION['id']) || $_SESSION['idStatus'] != 2) {
-    header('Location: ?page=Accueil');
-}
 require_once 'models/Status.php';
 require_once 'models/User.php';
 $status = new Status();
@@ -76,4 +73,4 @@ if (isset($_POST['registerForm'])) {
     }
 }
 require_once 'views/formRegister.php';
-?> 
+?>

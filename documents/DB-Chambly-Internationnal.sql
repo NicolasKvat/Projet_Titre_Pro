@@ -40,10 +40,10 @@ CREATE TABLE Article(
         title   Varchar (100) NOT NULL ,
         text    Text NOT NULL ,
         picture Varchar (100) NOT NULL ,
-        id_User Int
+        idUser Int
 	,CONSTRAINT Article_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Article_User_FK FOREIGN KEY (id_User) REFERENCES User(id) ON DELETE SET NULL
+	,CONSTRAINT Article_User_FK FOREIGN KEY (idUser) REFERENCES User(id) ON DELETE SET NULL
 )ENGINE=InnoDB;
 
 
@@ -55,9 +55,8 @@ CREATE TABLE Gallery(
         id      Int  Auto_increment  NOT NULL ,
         picture Varchar (100) NOT NULL ,
         title   Varchar (100) NOT NULL ,
-        id_User Int NOT NULL
+        idUser Int NOT NULL
 	,CONSTRAINT Gallery_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Gallery_User_FK FOREIGN KEY (id_User) REFERENCES User(id)
+	,CONSTRAINT Gallery_User_FK FOREIGN KEY (idUser) REFERENCES User(id)
 )ENGINE=InnoDB;
-

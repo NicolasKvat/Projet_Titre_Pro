@@ -2,11 +2,13 @@
 
 if (!isset($_SESSION['id']) || $_SESSION['idStatus'] != 2) {
     header('Location: ?page=Accueil');
+    exit();
 }
 
 require_once 'models/User.php';
 $user = new User();
 $user->setId($_GET['id']);
+$user->getUserById();
 
 if (isset($_GET['delete'])) {
 
@@ -14,10 +16,4 @@ if (isset($_GET['delete'])) {
     $user->deleteUser($id);
     header('Location: ?page=Espace-administrateur');
     exit();
-}
-
-if (isset($_SESSION['id'])) {
-
-    $user->setId($_SESSION['id']);
-    $user->getUserById();
 }
