@@ -1,12 +1,15 @@
 <?php
-session_start();
+
+if (!isset($_SESSION['id']) || $_SESSION['idStatus'] != 2) {
+    header('Location: ?page=Accueil');
+}
 
 require_once 'models/Gallery.php';
 $file = new Gallery();
 $file->setId($_GET['id']);
 
 
-if(!empty($_GET['delete'])){
+if (!empty($_GET['delete'])) {
 
     $id = $_GET['delete'];
 //    array_map('unlink', glob('assets/uploadFile/file' . $_GET['id'] . '.*'));
@@ -15,7 +18,7 @@ if(!empty($_GET['delete'])){
     exit();
 }
 
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
 
     $file->setId($_SESSION['id']);
     $file->getFileById();

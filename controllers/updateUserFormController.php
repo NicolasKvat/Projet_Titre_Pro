@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION['id']) || $_SESSION['idStatus'] != 2) {
+    header('Location: ?page=Accueil');
+}
 require_once 'models/Status.php';
 require_once 'models/User.php';
 $status = new Status();

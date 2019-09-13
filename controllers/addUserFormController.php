@@ -1,5 +1,7 @@
 <?php
-
+if (!isset($_SESSION['id']) || $_SESSION['idStatus'] != 2) {
+    header('Location: ?page=Accueil');
+}
 require_once 'models/Status.php';
 require_once 'models/User.php';
 $status = new Status();
@@ -68,7 +70,6 @@ if (isset($_POST['registerForm'])) {
             $user = new User();
             //on appelle la methode qui insere le patient dans la BDD puis on detruit l'objet patient_BDD
             $user->createUser($lastName, $firstName, $email, $passWord, $status);
-            header('Location:?page=Espace-administrateur');
         } catch (Exception $ex) {
             die($ex->getMessage());
         }

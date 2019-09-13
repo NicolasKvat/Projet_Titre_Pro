@@ -7,37 +7,44 @@
         </div>
     </div>
     <!--formulaire d'inscription-->     
-    <div class="row justify-content-center">                
-        <form name="form" action="?page=Inscription" method="POST" class="col-11 col-md-6 form-group p-4 mb-4">
-            <div class="form-group mb-4">
-                <!--nom-->
-                <label for="lastname" class='font-weight-bold'>Nom :</label>
-                <input type="text" class="form-control <?= isset($arrayOfErrors['lastname']) ? 'is-invalid' : '' ?>" name="lastname" value="<?= $_POST['lastname'] ?? '' ?>" required>
-                <span class="errorFormRegister p-2 <?= isset($arrayOfErrors['lastname']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['lastname'] ?? '' ?></span>
-            </div>
-            <div class="form-group mb-4">
-                <!--prénom-->
-                <label for="firstname" class='font-weight-bold'>Prénom :</label>
-                <input type="text" class="form-control <?= isset($arrayOfErrors['firstname']) ? 'is-invalid' : '' ?>" name="firstname" value="<?= $_POST['firstname'] ?? '' ?>" required>
-                <span class="errorFormRegister p-2 <?= isset($arrayOfErrors['firstname']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['firstname'] ?? '' ?></span>
-            </div>
-            <div class="form-group mb-4">
-                <!--email-->
-                <label for="emailRegister" class='font-weight-bold'>Email :</label>
-                <input type="text" class="form-control <?= isset($arrayOfErrors['emailRegister']) ? 'is-invalid' : '' ?>" name="emailRegister" value="<?= $_POST['emailRegister'] ?? '' ?>" required>
-                <span class="errorFormRegister p-2 <?= isset($arrayOfErrors['emailRegister']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['emailRegister'] ?? '' ?></span>
-            </div>
-            <div class="form-group mb-4 d-flex flex-column">
-                <!--mot de passe-->
-                <label for="passwordRegister" class='font-weight-bold'>Mot de passe :</label>
-                <small>Le mot de passe doit contenir au minimum 8 caractères avec au moins une minuscule, une majuscule, un chiffre et un caractère spécial parmis la liste. (- + ! * $ @ % _ ?)</small>
-                <input type="password" class="form-control <?= isset($arrayOfErrors['passwordRegister']) ? 'is-invalid' : '' ?>" name="passwordRegister" value="<?= $_POST['passwordRegister'] ?? '' ?>" required>
-                <span class="errorFormRegister p-2 <?= isset($arrayOfErrors['passwordRegister']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['passwordRegister'] ?? '' ?></span>
-            </div>
-            <div class="p-0 d-flex justify-content-end">
-                <input type="submit" name="submitRegister" id='submitRegister' class="btn font-weight-bold mr-0" value="S'inscrire">  
-            </div>  
-        </form>
-    </div>
+<div class="row flex-column align-items-center">
+    <p class='errorFormRegister font-weight-bold text-danger text-center'><?= $errorRegister ?></p>
+    <form name="form" action="" method="POST" class="col-11 col-md-6 form-group p-4 mb-4">
+        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+            <!--nom-->
+            <label for="lastName" class='font-weight-bold'>Nom :</label>
+            <input type="text" class="form-control" name="lastName" value="<?= $lastName ?? "" ?>" required>
+            <span class="errorFormRegister p-2 <?= isset($formError['lastName']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['lastName'] ?? '' ?></span>
+        </div>
+        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+            <!--prénom-->
+            <label for="firstName" class='font-weight-bold'>Prénom :</label>
+            <input type="text" class="form-control" name="firstName" value="<?= $firstName ?? "" ?>" required>
+            <span class="errorFormRegister p-2 <?= isset($formError['firstName']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['firstName'] ?? '' ?></span>
+        </div>
+        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+            <!--email-->
+            <label for="email" class='font-weight-bold'>Email :</label>
+            <input type="text" class="form-control" name="email" value="<?= $email ?? "" ?>" required>
+            <span class="errorFormRegister p-2 <?= isset($formError['email']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['email'] ?? '' ?></span>
+        </div>
+        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+            <!--mot de passe-->
+            <label for="passWord" class='font-weight-bold'>Mot de passe :</label>
+             <small>Le mot de passe doit contenir au minimum 8 caractères avec au moins une minuscule, une majuscule, un chiffre et un caractère spécial parmis la liste. (- + ! * $ @ % _ ?)</small>
+             <input type="password" class="form-control" name="passWord" required>
+            <span class="errorFormRegister p-2 <?= isset($formError['passWord']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['passWord'] ?? '' ?></span>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="status" value="1" required>
+            <span class="errorFormRegister p-2 <?= isset($formError['status']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['status'] ?? '' ?></span>         
+        </div>
+        <div class="m-3 p-0 d-flex justify-content-around">
+            <a href="?page=Accueil" class="btn btn-outline-danger font-weight-bold">Retour</a>
+            <input type="submit" name='registerForm' class="btn btn-outline-primary font-weight-bold mr-0" value="Envoyer"> 
+            <input type="hidden" value="<?= $user->getId() ?? 0 ?>" name="id">
+        </div>
+    </form>
+</div>
 </main>
 <?php require_once 'views/footer.php' ?> 

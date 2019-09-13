@@ -32,7 +32,7 @@ require_once 'header.php';
             <!--mot de passe-->
             <label for="passWord" class='font-weight-bold'>Mot de passe :</label>
              <small>Le mot de passe doit contenir au minimum 8 caractères avec au moins une minuscule, une majuscule, un chiffre et un caractère spécial parmis la liste. (- + ! * $ @ % _ ?)</small>
-             <input type="password" class="form-control" name="passWord" value="<?= $passWord ?? "" ?>" required>
+             <input type="password" class="form-control" name="passWord" required>
             <span class="errorFormRegister p-2 <?= isset($formError['passWord']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['passWord'] ?? '' ?></span>
         </div>
         <div class="form-group">

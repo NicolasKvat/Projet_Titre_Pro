@@ -1,3 +1,6 @@
+<?php
+require_once 'controllers/connectUserController.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -20,17 +23,15 @@
                     <div class="row navbarRow w-100 d-flex flex-row justify-content-between align-items-center">
                         <!-- logo -->
                         <div class="col-2 d-flex justify-content-center align-items-center">
-                            <a class="logo text-center text-decoration-none" href="#">Logo</a>
+                            <a class="logo text-center text-decoration-none" href="?page=Accueil">Logo</a>
                         </div>
                         <!-- menu items -->
                         <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">
                             <a href="?page=Accueil" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Accueil</a>
                             <a href="?page=Galerie" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Galerie</a>
                             <a href="?page=À-Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>           
-                            <div class="register d-flex flex-column">
-                                <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
-                            </div>
-                            <a href="#" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
+                            <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection"><?= $connectUser ?></a>
+                            <a href="https://www.helloasso.com/associations/association-chambly-international" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
                         </div>
                         <!-- menu burger -->
 
@@ -45,11 +46,11 @@
                             <div class="navbar-nav d-flex justify-content-center align-items-center">
                                 <a href="index.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Accueil</a>
                                 <a href="galerie.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
-                                <a href="about_us.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>              
-                                <div class="register d-flex flex-column">
-                                    <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-2 pr-2 m-2" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
-                                </div>
-                                <a href="#" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1 m-2">Faire un don</a>
+                                <a href="about_us.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
+
+                                <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-2 pr-2 m-2" data-toggle="modal" data-target="#modalConnection"><?= $connectUser ?></a>
+
+                                <a href="https://www.helloasso.com/associations/association-chambly-international" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1 m-2">Faire un don</a>
                             </div>
                         </div>
                     </div>
@@ -59,34 +60,64 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content border-0">
                             <div class="modal-header">
-                                <h5 class="modal-title font-weight-bold text-white" id="connectionModalLabel">Connexion</h5>
+                                <h1 class="modal-title font-weight-bold text-white" id="connectionModalLabel"><?= $connectUser ?></h1>
                                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <!-- formulaire de connection-->
-                            <form name="formConnect" action="index.php" method="POST">
-                                <input type="hidden" name="validRegister" value="OKAYY">
-                                <div class="modal-body d-flex flex-column">
-                                    <div class="form-group">
-                                        <!--email-->
-                                        <label for="email" class='font-weight-bold text-white'>Email</label>
-                                        <input type="text" class="form-control border-0 <?= isset($arrayOfErrors['email']) ? 'is-invalid' : '' ?>" name="email" placeholder="Mon email" value="<?= $_POST['email'] ?? '' ?>" required>
-                                        <span class="errorForm p-2 <?= isset($arrayOfErrors['email']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['email'] ?? '' ?></span>
+                            <?php if (!isset($_SESSION['id'])) { ?>
+                                <!-- formulaire de connection-->
+                                <form name="formConnect" action="index.php" method="POST">
+                                    <div class="modal-body d-flex flex-column">
+                                        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+                                            <!--email-->
+                                            <label for="email" class='font-weight-bold text-white'>Email :</label>
+                                            <input type="text" class="form-control" name="email" value="<?= $email ?? "" ?>" required>
+                                            <span class="errorFormRegister p-2 <?= isset($formError['email']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['email'] ?? '' ?></span>
+                                        </div>
+                                        <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
+                                            <!--mot de passe-->
+                                            <label for="passWord" class='font-weight-bold text-white'>Mot de passe :</label>
+                                            <input type="password" class="form-control" name="passWord" required>
+                                            <span class="errorFormRegister p-2 <?= isset($formError['passWord']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['passWord'] ?? '' ?></span>
+                                        </div>
+                                        <div class="modal-footer d-flex flex-row justify-content-end p-0 border-0"> 
+                                            <div class="d-flex justify-content-around">                       
+                                                <a href="?page=Inscription" class="btn text-white font-weight-bold ml-0 mr-1">S'inscrire</a>  
+                                                <input type="submit" name="connectionUser" class="btn text-white font-weight-bold ml-1 mr-0" value="Se connecter">   
+                                            </div>                    
+                                        </div>
                                     </div>
-                                    <div class='form-group'>
-                                        <label class="font-weight-bold text-white" for="password">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control input border-0 <?= isset($arrayOfErrors['password']) ? 'is-invalid' : '' ?>" placeholder="Mon mot de passe" id="password" value="<?= $_POST['password'] ?? '' ?>" required>
-                                        <span class="errorForm p-2 <?= isset($arrayOfErrors['password']) ? 'text-danger' : '' ?> font-weight-bold"><?= $arrayOfErrors['password'] ?? '' ?></span>
-                                    </div>
-                                    <div class="modal-footer d-flex flex-row justify-content-end p-0 border-0"> 
-                                        <div class="d-flex justify-content-around">                       
-                                            <a href="?page=Inscription" class="btn text-white font-weight-bold ml-0 mr-1">S'inscrire</a>  
-                                            <input type="submit" class="btn text-white font-weight-bold ml-1 mr-0" value="Se connecter">   
-                                        </div>                    
-                                    </div>
+                                </form>
+                                <?php
+                            } else {
+                                if ($_SESSION['idStatus'] == 1) {
+                                    $nameStatus = 'Utilisateur';
+                                } elseif ($_SESSION['idStatus'] == 2) {
+                                    $nameStatus = 'Administrateur';
+                                }
+                                ?>
+                                <div class='d-flex flex-column m-4'>
+                                    <h4 class='text-white font-weight-bold my-2'>Nom :</h4>
+                                    <p class="text-white text-center"><?= $_SESSION['lastName'] ?></p>
+                                    <h4 class='text-white font-weight-bold my-2'>Prénom :</h4>
+                                    <p class="text-white text-center"><?= $_SESSION['firstName'] ?></p>
+                                    <h4 class='text-white font-weight-bold my-2'>Email :</h4>
+                                    <p class="text-white text-center"><?= $_SESSION['email'] ?></p>
+                                    <h4 class='text-white font-weight-bold my-2'>Status :</h4>
+                                    <p class="text-white text-center"><?= $nameStatus ?></p>  
                                 </div>
-                            </form>  
+                                <div class="modal-footer d-flex flex-row justify-content-center p-0 border-0"> 
+                                    <div class="d-flex justify-content-around">
+                                        <?php if ($_SESSION['idStatus'] == 2) { ?>
+                                        <a href="?page=Espace-administrateur" class="btn text-white font-weight-bold m-4">Espace admin</a>
+                                        <?php } ?>
+                                        <form action="" method="POST">
+                                            <input class="btn text-white font-weight-bold m-4" type="submit" name="disconnect" value="Déconnexion">
+                                        </form>
+                                    </div>                    
+                                </div>
+                            <?php } ?>
                         </div>       
                     </div>
                 </div>

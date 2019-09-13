@@ -1,4 +1,5 @@
 <?php
+session_start();
 // seul ces pages sont valides
 $routes = [
     'Accueil' => 'controllers/actualityController.php',
@@ -18,7 +19,8 @@ $routes = [
     'Liste-d\'images' => 'controllers/fileGalleryListController.php',
     'Ajouter-image' => 'controllers/addFileFormController.php',
     'Modifier-image' => 'controllers/updateFileController.php',
-    'Supprimer-image' => 'views/confirmDeleteFile.php'
+    'Supprimer-image' => 'views/confirmDeleteFile.php',
+    'Inscription-validé' => 'controllers/validateRegisterController.php'
 ];
 
 //si un parametre page est passé dans le GET
@@ -35,6 +37,5 @@ if(isset($_GET['page'])){
 }else{
     $page='Accueil';
 }
-
 //on appelle la page correspondante
 include_once $routes[$page];

@@ -57,18 +57,60 @@ class User {
     }
 
     public function createUser($lastName, $firstName, $email, $passWord, $idStatus) {
-        $query = $this->db->prepare('INSERT INTO `User` (lastName, firstName, email, passWord, idStatus) VALUE (:lastName, :firstName, :email, :passWord, :status)');
-            // Lier les variables à l'instruction 'prepare' en tant que valeurs
-            $query->bindValue(':lastName', $lastName, PDO::PARAM_STR);
-            $query->bindValue(':firstName', $firstName, PDO::PARAM_STR);
-            $query->bindValue(':email', $email, PDO::PARAM_STR);
-            $query->bindValue(':passWord', $passWord, PDO::PARAM_STR);
-            $query->bindValue(':status', $idStatus, PDO::PARAM_STR);
-            //execution de la requete
-        $query->execute();
+        // On vérifie si le mail existe
+        $sql = 'SELECT * FROM `User` WHERE `email` = ?';
+        $query = $this->db->prepare($sql);
+        $query->execute(array($email));
+        $mailExists = $query->rowCount();
+        // Si le mail n'existe pas, on peut insérer les données dans la BDD.
+        if ($mailExists == 0) {
+            $sql = 'INSERT INTO `User` (lastName, firstName, email, passWord, idStatus) VALUE (:lastName, :firstName, :email, :passWord, :status)';
+            if ($query = $this->db->prepare($sql)) {
+                // Lier les variables à l'instruction 'prepare' en tant que valeurs
+                $query->bindValue(':lastName', $lastName, PDO::PARAM_STR);
+                $query->bindValue(':firstName', $firstName, PDO::PARAM_STR);
+                $query->bindValue(':email', $email, PDO::PARAM_STR);
+                $query->bindValue(':passWord', $passWord, PDO::PARAM_STR);
+                $query->bindValue(':status', $idStatus, PDO::PARAM_STR);
+                // Si l'instruction 'execute' ne rencontre pas de difficultés.
+                $query->execute();
+                header('Location:?page=Espace-administrateur');
+                return true;             
+            }
+        } else {
+            echo '<p class="idError text-danger font-weight-bold">'.'Cette adresse mail est déjà utilisée !'.'</p>';
+            return false;
+        }
     }
     
-        //méthode qui met à jour l'utilisateur
+        public function registerUser($lastName, $firstName, $email, $passWord, $idStatus) {
+        // On vérifie si le mail existe
+        $sql = 'SELECT * FROM `User` WHERE `email` = ?';
+        $query = $this->db->prepare($sql);
+        $query->execute(array($email));
+        $mailExists = $query->rowCount();
+        // Si le mail n'existe pas, on peut insérer les données dans la BDD.
+        if ($mailExists == 0) {
+            $sql = 'INSERT INTO `User` (lastName, firstName, email, passWord, idStatus) VALUE (:lastName, :firstName, :email, :passWord, :status)';
+            if ($query = $this->db->prepare($sql)) {
+                // Lier les variables à l'instruction 'prepare' en tant que valeurs
+                $query->bindValue(':lastName', $lastName, PDO::PARAM_STR);
+                $query->bindValue(':firstName', $firstName, PDO::PARAM_STR);
+                $query->bindValue(':email', $email, PDO::PARAM_STR);
+                $query->bindValue(':passWord', $passWord, PDO::PARAM_STR);
+                $query->bindValue(':status', $idStatus, PDO::PARAM_STR);
+                // Si l'instruction 'execute' ne rencontre pas de difficultés.
+                $query->execute();
+                header('Location:?page=Inscription-validé');
+                return true;             
+            }
+        } else {
+            echo '<p class="idError text-danger font-weight-bold">'.'Cette adresse mail est déjà utilisée !'.'</p>';
+            return false;
+        }
+    }
+
+    //méthode qui met à jour l'utilisateur
     public function updateUser($id) {
         //preparation de la requete
         $query = $this->db->prepare("UPDATE `User` SET lastName = :lastName, firstName = :firstName, email = :email, idStatus = :idStatus WHERE id = :id;");
@@ -79,7 +121,7 @@ class User {
         $query->bindValue(':id', $id);
         //execution de la requete
         $query->execute();
-        if($query->rowCount() > 0) {
+        if ($query->rowCount() > 0) {
             return true;
         }
         return false;
@@ -104,6 +146,30 @@ class User {
             }
         }
         return false;
+    }
+
+    public function connectUser($email, $passWord) {
+        global $error;
+        $query = $this->db->prepare('SELECT * FROM `User` WHERE `email` = :email');
+        $query->bindValue(':email', $email, PDO::PARAM_STR);
+        $query->execute();
+        $user = $query->fetch(PDO::FETCH_OBJ);
+        if (empty($user)) {
+            $error = 'Veuillez insérer un mail et un mot de passe valide !!!';
+            return false;
+        } else {
+            if (password_verify($passWord, $user->passWord)) {
+                $_SESSION['id'] = $user->id;
+                $_SESSION['lastName'] = $user->lastName;
+                $_SESSION['firstName'] = $user->firstName;
+                $_SESSION['email'] = $user->email;
+                $_SESSION['idStatus'] = $user->idStatus;
+                return true;
+            } else {
+                $error = 'Veuillez insérer un mail et un mot de passe valide !!!';
+                return false;
+            }
+        }
     }
 
     public function getUserById() {
