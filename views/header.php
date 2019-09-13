@@ -30,7 +30,7 @@ require_once 'controllers/connectUserController.php';
                             <a href="?page=Accueil" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Accueil</a>
                             <a href="?page=Galerie" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Galerie</a>
                             <a href="?page=À-Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>           
-                            <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection"><?= $connectUser ?></a>
+                            <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
                             <a href="https://www.helloasso.com/associations/association-chambly-international" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
                         </div>
                         <!-- menu burger -->
@@ -48,7 +48,7 @@ require_once 'controllers/connectUserController.php';
                                 <a href="galerie.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
                                 <a href="about_us.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
 
-                                <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-2 pr-2 m-2" data-toggle="modal" data-target="#modalConnection"><?= $connectUser ?></a>
+                                <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-2 pr-2 m-2" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
 
                                 <a href="https://www.helloasso.com/associations/association-chambly-international" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1 m-2">Faire un don</a>
                             </div>
@@ -60,7 +60,7 @@ require_once 'controllers/connectUserController.php';
                     <div class="modal-dialog" role="document">
                         <div class="modal-content border-0">
                             <div class="modal-header">
-                                <h1 class="modal-title font-weight-bold text-white" id="connectionModalLabel"><?= $connectUser ?></h1>
+                                <h1 class="modal-title font-weight-bold text-white" id="connectionModalLabel">Mon compte</h1>
                                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>

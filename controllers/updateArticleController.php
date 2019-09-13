@@ -34,7 +34,7 @@ if (isset($_POST['updateArticle'])) {
         $text = trim(strip_tags(($_POST['text'])));
     }
     // Si le champs status est vide
-    if (!is_numeric($_POST['idUser'])) {
+    if (!isset($_POST['idUser']) || !is_numeric($_POST['idUser'])) {
         $formError['idUser'] = 'Veuillez entrer un id valide.';
         // Si le status est correct
     } else {

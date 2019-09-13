@@ -18,7 +18,7 @@ require_once 'views/header.php';
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--texte-->
             <label for="text" class='font-weight-bold'>texte :</label>
-            <textarea class="form-control" id="text" name="text" required><?= $Article->getText() ?></textarea>
+            <textarea class="form-control" id="text" name="text" required><?= isset($text) ? $text : $Article->getText()  ?></textarea>
             <span class="errorFormRegister p-2 <?= isset($formError['text']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['text'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
