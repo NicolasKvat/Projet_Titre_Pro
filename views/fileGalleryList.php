@@ -30,7 +30,6 @@ require_once 'views/header.php';
                         <img class="galleryImg text-center" src="assets/uploadFile/file<?= $file->id ?>.<?= $file->picture ?>" alt="">
                     </a>
                     <a href="#" class="titleImg font-weight-bold text-center m-2"><?= $file->title ?></a>
-    <!--                    <small class="font-weight-bold">Juillet 2019</small>-->
                     <div class="d-flex flex-row">
                     <a href="?page=Modifier-image&id=<?= $file->id ?>" class="btn btn-primary font-weight-bold m-2">Modifier</a>
                     <a href="?page=Supprimer-image&id=<?= $file->id ?>" class="btn btn-danger font-weight-bold m-2">Supprimer</a>

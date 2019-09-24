@@ -1,5 +1,5 @@
                 <!-- navbar -->
-                <nav class="navbar d-flex flex-row justify-content-center align-items-center mb-4">
+                <nav class="d-flex flex-row justify-content-center align-items-center mb-4" id="navbarAdmin">
                     <div class="row navbarRow w-100 d-flex flex-row justify-content-between align-items-center">
                         <!-- menu items -->
                         <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">

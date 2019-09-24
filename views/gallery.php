@@ -5,8 +5,8 @@
             <h2 class="titleOfPage d-block font-weight-bold px-4 py-2 m-4 text-white display-sm-4 text-center">Galerie</h2>
         </div>
     </div>
-        <div class="d-flex flex-md-row justify-content-center">
-            <div class="col-md-9 d-flex mr-md-3 m-0 ml-0 p-0 flex-column justify-content-center" id="newsContainer">
+        <div class="d-flex justify-content-center">
+            <div class="col-9 d-flex m-0 p-0 justify-content-center" id="newsContainer">
                 <div class="row d-flex justify-content-center">
                     <?php
                     // on affiche un message si il 'y a aucun article.
@@ -20,8 +20,8 @@
                         ?>
 
 
-                        <div class="col-lg-4 my-5 py-2 d-flex flex-column align-items-center galerieContainer">
-                            <a href="#" class="mx-4 justify-content-center">
+                        <div class="col-lg-4 m-5 py-2 d-flex flex-column align-items-center galerieContainer">
+                            <a href="#" class="d-flex justify-content-center">
                                 <img class="galleryImg text-center" src="assets/uploadFile/file<?= $file->id ?>.<?= $file->picture ?>" alt="">
                             </a>
                             <a href="#" class="titleImg font-weight-bold text-center m-2"><?= $file->title ?></a>
@@ -32,4 +32,4 @@
             </div>
         </div>
 </main>
-<?php require_once 'views/footerAdminSpace.php' ?> 
+<?php require_once 'views/footer.php' ?>

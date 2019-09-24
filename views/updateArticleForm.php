@@ -25,7 +25,7 @@ require_once 'views/header.php';
             <!--image-->
             <label for="fileUpload" class='font-weight-bold'>Image :</label>
             <input type="file" name="photo" id="fileUpload">
-            <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 5 Mo.</p>
+            <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .jpeg, .gif, .png sont autorisés jusqu'à une taille maximale de 2 Mo.</p>
         </div>
         <div class="form-group">
             <label for="idUser" class='font-weight-bold'>ID de l'admin</label>

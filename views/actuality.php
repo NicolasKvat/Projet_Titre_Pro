@@ -7,10 +7,10 @@
         <p class="slogan m-0 text-white text-center">"Un geste pour eux, c'est un geste pour vous."</p>
     </div>
     <!-- actualité -->
-    <div class="d-flex flex-md-row justify-content-center">
-        <div class="col-md-9 d-flex mr-md-3 m-0 ml-0 p-0 flex-column justify-content-center" id="newsContainer">
-            <div class="d-flex flex-md-row justify-content-center">
-                <div class="col-md-9 d-flex mr-md-3 m-0 ml-0 p-0 flex-column justify-content-center" id="newsContainer">
+    <div class="d-flex flex-md-row justify-content-center w-100">
+        <div class="col-md-9 d-flex mx-md-3 m-0 ml-0 p-0 flex-column" id="newsContainer">
+            <div class="d-flex justify-content-center">
+                <div class="col-md d-flex mx-lg-3 m-0 ml-0 p-0 flex-column" id="newsContainer">
                     <?php
                     // on affiche un message si il 'y a aucun article.
                     if (empty($articlesList)) {
@@ -25,21 +25,21 @@
                         unset($tab[$wordNumber]);
                         ?>
 
-                        <div class="d-flex flex-md-row flex-column justify-content-center p-0 my-4">
+                        <div class="d-flex flex-md-row flex-column justify-content-center p-0 my-4 article">
                             <div class="d-flex justify-content-center justify-content-md-start">
                                 <img class="galleryImg" src="assets/uploadArticle/Article<?= $article->id ?>.<?= $article->picture ?>" alt="">
                             </div>
                             <div class="news col p-0">
                                 <h2 class="newsTitle font-weight-bold pl-4"><?= $article->title ?></h2>
-                                <p class="newsText pl-4"><?= implode(' ', $tab) . '...' ?></p>
+                                <p class="newsText px-2"><?= implode(' ', $tab) . '...' ?></p>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
             </div>
         </div>
-        <div class="col-md-2 p-0 ml-1 mr-2 justify-content-end twitter">
-            <a class="twitter-timeline" data-width="300" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-3 p-0 ml-1 mr-2 justify-content-end twitter">
+            <a class="twitter-timeline" data-width="500" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
         </div>
     </div>
 </main>

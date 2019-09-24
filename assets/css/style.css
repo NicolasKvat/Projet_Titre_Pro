@@ -1,6 +1,6 @@
 
 /* navbar */
-.navbar {
+#navbar, #navbarAdmin {
     background: #70C24A;
     font-family: 'Nunito', sans-serif;
 }
@@ -19,10 +19,9 @@
     background-color: #7CB342;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.logo {
-    font-family: 'Lobster', sans-serif;
-    font-size: 32px;
-    color: white !important;
+#logo {
+    height: 48px;
+    width: 48px;
     text-decoration: none;
 }
 .don1 {
@@ -139,6 +138,9 @@
 }
 label, input {
     font-family: 'Dosis', sans-serif !important;  
+}
+.infoUser {
+    font-size: 18px;
 }
 /* main actu */
 .baniere-title {
@@ -292,24 +294,11 @@ footer {
     transform: scale(1.2);
 }
 /* Media query */
-/*@media screen and (max-width: 767px) {
-    
-}*/
 @media screen and (max-width: 767px) {
-    #textOfArticleOfDay {
-        display: none;
-    }
-    #titleOfDay, .newsTitle, #thanksText {
-        font-size: 18px;
-        border-bottom: none;
-    }
     .newsImg {
         height: auto !important;
         text-align: center;
-    }
-    .newsText {
-        display: none;
-    }
+    } 
     .descript-goal p, #thanks p, #chamblyCopyright {
         font-size: 18px;
     }
@@ -320,8 +309,19 @@ footer {
         border-bottom: 2px solid #70C24A;
     }
 }
+@media screen and (max-width: 872px) {
+    .newsText {
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .twitter {
         display: none !important;
+    }
+    .newsTitle, #thanksText {
+        font-size: 18px;
+        border-bottom: none;
+        text-align: center;
     }
 }

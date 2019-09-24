@@ -45,7 +45,7 @@ class Article {
     }
 
     public function getAllArticles() {
-        $sql = 'SELECT `id`, `title`, `text`, `picture`, `idUser` FROM `Article` ORDER BY `id`;';
+        $sql = 'SELECT `id`, `title`, `text`, `picture`, `idUser` FROM `Article` ORDER BY `id` DESC;';
         $articlesRequest = $this->db->query($sql);
         $articlesList = $articlesRequest->fetchAll(PDO::FETCH_OBJ);
         return $articlesList;

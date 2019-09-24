@@ -30,13 +30,12 @@
     <!-- donation -->
     <div class="row m-0 d-flex justify-content-center">
         <div class="col-md-4 donation my-md-2 mr-md-2 d-none d-md-flex justify-content-center align-items-center flex-column">
-            <a href="#" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
+            <a href="https://www.helloasso.com/associations/association-chambly-international" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
         </div>
         <div class="col-md-7 my-md-2 ml-md-2 d-flex justify-content-center align-items-center flex-column" id="thanks">
             <p class="text-center text-white font-weight-bold p-4 m-0">Merci infiniment pour votre soutien depuis notre création. Vous êtes les premiers responsables de notre développement. Ensemble nous sommes plus forts.</p>
-            <a href="#" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
+            <a href="https://www.helloasso.com/associations/association-chambly-international" class="don2 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>
         </div>
     </div>
-    <!-- <a class="twitter-timeline" data-width="320" data-height="1000" href="https://twitter.com/Ch_inter?ref_src=twsrc%5Etfw">Tweets by Ch_inter</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   -->
 </main>
 <?php require_once 'views/footer.php' ?> 

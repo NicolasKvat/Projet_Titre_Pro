@@ -40,7 +40,7 @@ class Gallery {
     }
 
     public function getAllFiles() {
-        $sql = 'SELECT `id`, `title`, `picture`, `idUser` FROM `Gallery` ORDER BY `id`;';
+        $sql = 'SELECT `id`, `title`, `picture`, `idUser` FROM `Gallery` ORDER BY `id` DESC;';
         $fileRequest = $this->db->query($sql);
         $fileList = $fileRequest->fetchAll(PDO::FETCH_OBJ);
         return $fileList;

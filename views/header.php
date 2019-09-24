@@ -19,11 +19,11 @@ require_once 'controllers/connectUserController.php';
             <!-- header -->
             <header>
                 <!-- navbar -->
-                <nav class="navbar d-flex flex-row justify-content-center align-items-center">
+                <nav class="d-flex flex-row justify-content-center align-items-center" id="navbar">
                     <div class="row navbarRow w-100 d-flex flex-row justify-content-between align-items-center">
                         <!-- logo -->
-                        <div class="col-2 d-flex justify-content-center align-items-center">
-                            <a class="logo text-center text-decoration-none" href="?page=Accueil">Logo</a>
+                        <div class="col-1 d-flex justify-content-center align-items-center m-2">
+                            <a class="text-center text-decoration-none" href="?page=Accueil"><img src="assets/img/logo.jpg" id="logo"></a>
                         </div>
                         <!-- menu items -->
                         <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">
@@ -35,7 +35,7 @@ require_once 'controllers/connectUserController.php';
                         </div>
                         <!-- menu burger -->
 
-                        <div id="wrapper" class="d-xl-none" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <div id="wrapper" class="d-xl-none m-2" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <div class="circle icon">
                                 <span class="line top"></span>
                                 <span class="line middle"></span>
@@ -44,9 +44,9 @@ require_once 'controllers/connectUserController.php';
                         </div>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav d-flex justify-content-center align-items-center">
-                                <a href="index.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Accueil</a>
-                                <a href="galerie.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
-                                <a href="about_us.php" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
+                                <a href="?page=Accueil" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Accueil</a>
+                                <a href="?page=Galerie" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">Galerie</a>
+                                <a href="?page=À-Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4 m-2">À propos</a>
 
                                 <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-2 pr-2 m-2" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
 
@@ -99,13 +99,13 @@ require_once 'controllers/connectUserController.php';
                                 ?>
                                 <div class='d-flex flex-column m-4'>
                                     <h4 class='text-white font-weight-bold my-2'>Nom :</h4>
-                                    <p class="text-white text-center"><?= $_SESSION['lastName'] ?></p>
+                                    <p class="text-white text-center infoUser"><?= $_SESSION['lastName'] ?></p>
                                     <h4 class='text-white font-weight-bold my-2'>Prénom :</h4>
-                                    <p class="text-white text-center"><?= $_SESSION['firstName'] ?></p>
+                                    <p class="text-white text-center infoUser"><?= $_SESSION['firstName'] ?></p>
                                     <h4 class='text-white font-weight-bold my-2'>Email :</h4>
-                                    <p class="text-white text-center"><?= $_SESSION['email'] ?></p>
+                                    <p class="text-white text-center infoUser"><?= $_SESSION['email'] ?></p>
                                     <h4 class='text-white font-weight-bold my-2'>Status :</h4>
-                                    <p class="text-white text-center"><?= $nameStatus ?></p>  
+                                    <p class="text-white text-center infoUser"><?= $nameStatus ?></p>  
                                 </div>
                                 <div class="modal-footer d-flex flex-row justify-content-center p-0 border-0"> 
                                     <div class="d-flex justify-content-around">
