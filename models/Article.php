@@ -71,7 +71,7 @@ class Article {
         }
     }
 
-    //methode qui met à jour l'article
+    //méthode qui met à jour l'article
     public function updateArticle($title, $text, $picture, $idUser) {
         //preparation de la requete
         $query = $this->db->prepare("UPDATE `Article` SET title = :title, text = :text, picture = :picture, idUser = :idUser WHERE id = :id;");
@@ -88,7 +88,7 @@ class Article {
         return false;
     }
 
-    //fonction supprimer l'article
+    //méthode supprimer l'article
     public function deleteArticle($id) {
         // Stockage de la requête SQL
         $query = $this->db->prepare('DELETE FROM `Article` WHERE `id` = :id');
@@ -97,7 +97,7 @@ class Article {
         // Exécution de la requête SQL
         $query->execute();
     }
-
+    //méthode permettant de vérifier l'article
     public function verifyArticle() {
         $query = $this->db->prepare('SELECT * FROM `Article` WHERE `id` = :id');
         $query->bindValue(':id', $this->id, PDO::PARAM_INT);
@@ -108,7 +108,7 @@ class Article {
         }
         return false;
     }
-
+    //méthode permettant de récupérer un article par son id
     public function getArticleById() {
         $query = $this->db->prepare('SELECT * FROM `Article` WHERE `id` = :id');
         $query->bindValue(':id', $this->id, PDO::PARAM_INT);

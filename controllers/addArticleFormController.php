@@ -8,7 +8,6 @@ require_once 'models/User.php';
 $User = new User();
 $userList = $User->getAllUsers();
 // pattern pour la vérification du formulaire
-//$emailPattern = '^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/';
 $stringPattern = '/^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]{3,60}$/';
 //   On test chaque input en fonction de son pattern et si ils ne correspondent pas on insert un message d'erreur
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
@@ -17,9 +16,6 @@ if (isset($_POST['addArticle'])) {
     // Si le champs titre est vide
     if (empty($_POST['title'])) {
         $formError['title'] = 'Veuillez entrer un titre.';
-        // Si le titre est incorrect
-//    } elseif (!preg_match($stringPattern, $_POST['title'])) {
-//        $formError['title'] = 'Veuillez entrer un titre valide.';
         // Si le titre est correct
     } else {
         $title = trim(strip_tags($_POST['title']));

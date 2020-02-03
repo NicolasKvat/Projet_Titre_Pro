@@ -13,12 +13,14 @@ require_once 'views/header.php';
             <!--titre-->
             <label for="title" class='font-weight-bold'>titre de l'article :</label>
             <input type="text" class="form-control" id='title' name="title" value="<?= $Article->getTitle() ?>" required>
+            <!--            on utilise une ternaire si il y a une erreur dans le titre, on met un message d'erreur en rouge-->
             <span class="errorFormRegister p-2 <?= isset($formError['title']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['title'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--texte-->
             <label for="text" class='font-weight-bold'>texte :</label>
             <textarea class="form-control" id="text" name="text" required><?= isset($text) ? $text : $Article->getText()  ?></textarea>
+            <!--            on utilise une ternaire si il y a une erreur dans le texte, on met un message d'erreur en rouge-->
             <span class="errorFormRegister p-2 <?= isset($formError['text']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['text'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
@@ -38,6 +40,7 @@ require_once 'views/header.php';
                     </option>
                 <?php } ?>
             </select>
+            <!--            on utilise une ternaire si il y a une erreur dans l'id de l'utilisateur, on met un message d'erreur en rouge-->
             <span class="errorFormRegister p-2 <?= isset($formError['idUser']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['idUser'] ?? '' ?></span>
 
         </div>

@@ -13,6 +13,8 @@ CREATE TABLE status(
 	,CONSTRAINT status_PK PRIMARY KEY (idStatus)
 )ENGINE=InnoDB;
 
+# Ajout des statuts Utilisateur et Administrateur
+INSERT INTO `status` (`idStatus`, `name`) VALUES ('1', 'Utilisateur'), ('2', 'Administrateur');
 
 #------------------------------------------------------------
 # Table: User
@@ -40,24 +42,24 @@ CREATE TABLE Article(
         title   Varchar (100) NOT NULL ,
         text    Text NOT NULL ,
         picture Varchar (100) NOT NULL ,
-        id_User Int NOT NULL
+        idUser Int NOT NULL
 	,CONSTRAINT Article_PK PRIMARY KEY (id)
 
-	,CONSTRAINT Article_User_FK FOREIGN KEY (id_User) REFERENCES User(id)
+	,CONSTRAINT Article_User_FK FOREIGN KEY (idUser) REFERENCES User(id)
 )ENGINE=InnoDB;
 
 
-#------------------------------------------------------------
-# Table: Gallery
-#------------------------------------------------------------
-
-CREATE TABLE Gallery(
-        id      Int  Auto_increment  NOT NULL ,
-        picture Varchar (100) NOT NULL ,
-        title   Varchar (100) NOT NULL ,
-        id_User Int NOT NULL
-	,CONSTRAINT Gallery_PK PRIMARY KEY (id)
-
-	,CONSTRAINT Gallery_User_FK FOREIGN KEY (id_User) REFERENCES User(id)
-)ENGINE=InnoDB;
+-- #------------------------------------------------------------
+-- # Table: Gallery
+-- #------------------------------------------------------------
+-- 
+-- CREATE TABLE Gallery(
+--         id      Int  Auto_increment  NOT NULL ,
+--         picture Varchar (100) NOT NULL ,
+--         title   Varchar (100) NOT NULL ,
+--         id_User Int NOT NULL
+-- 	,CONSTRAINT Gallery_PK PRIMARY KEY (id)
+-- 
+-- 	,CONSTRAINT Gallery_User_FK FOREIGN KEY (id_User) REFERENCES User(id)
+-- )ENGINE=InnoDB;
 

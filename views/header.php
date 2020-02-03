@@ -28,7 +28,6 @@ require_once 'controllers/connectUserController.php';
                         <!-- menu items -->
                         <div class="col-md d-xl-flex d-none flex-row justify-content-around align-items-center">
                             <a href="?page=Accueil" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Accueil</a>
-                            <a href="?page=Galerie" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">Galerie</a>
                             <a href="?page=À-Propos" class="menu-items text-decoration-none font-weight-bold pl-4 pr-4">À propos</a>           
                             <a href="#" class="menu-items account text-decoration-none font-weight-bold pl-4 pr-4" data-toggle="modal" data-target="#modalConnection">Mon compte</a>
                             <a href="https://www.helloasso.com/associations/association-chambly-international" class="don1 text-decoration-none text-center font-weight-bold pt-1 pb-1">Faire un don</a>

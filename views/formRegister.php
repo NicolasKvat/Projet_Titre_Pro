@@ -36,8 +36,18 @@
             <span class="errorFormRegister p-2 <?= isset($formError['passWord']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['passWord'] ?? '' ?></span>
         </div>
         <div class="form-group">
-            <input type="hidden" name="status" value="1" required>
-            <span class="errorFormRegister p-2 <?= isset($formError['status']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['status'] ?? '' ?></span>         
+            <label for="status" class='font-weight-bold'>Status :</label>
+            <small>(Le champ de texte ajouté volontairement pour accéder à l'espace admin)</small>
+            <select name="status" id="status" class="form-control">
+                <option selected disabled value="0">Choisir un status</option>
+                <?php foreach ($statusList as $status) { ?>
+                    <option value="<?= $status->idStatus ?>">
+                        <?= $status->name ?>
+                    </option>
+                <?php } ?>
+            </select>
+            <span class="errorFormRegister p-2 <?= isset($formError['status']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['status'] ?? '' ?></span>
+            
         </div>
         <div class="m-3 p-0 d-flex justify-content-around">
             <a href="?page=Accueil" class="btn btn-outline-danger font-weight-bold">Retour</a>

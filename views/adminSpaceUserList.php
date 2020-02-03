@@ -18,6 +18,7 @@ require_once 'header.php';
     <th>Status</th>
 </thead>
 <tbody>
+<!--    on affiche les différentes informations des utilisateurs-->
     <?php foreach ($UserList as $user) {
         ?>
         <tr>

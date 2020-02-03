@@ -13,12 +13,14 @@ require_once 'views/header.php';
             <!--titre-->
             <label for="title" class='font-weight-bold'>titre de l'article :</label>
             <input type="text" class="form-control" id='title' name="title" value="<?= $title ?? "" ?>" required>
+<!--            on utilise une ternaire si il y a une erreur dans le titre, on met un message d'erreur en rouge-->
             <span class="errorFormRegister p-2 <?= isset($formError['title']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['title'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
             <!--texte-->
             <label for="text" class='font-weight-bold'>texte :</label>
             <textarea class="form-control" id="text" name="text" required><?= $text ?? "" ?></textarea>
+            <!--            on utilise une ternaire si il y a une erreur dans le texte, on met un message d'erreur en rouge-->
             <span class="errorFormRegister p-2 <?= isset($formError['text']) ? 'text-danger' : '' ?> font-weight-bold"><?= $formError['text'] ?? '' ?></span>
         </div>
         <div class="form-group mb-4 <?= (!empty($pseudo_err)) ? 'has-error' : ''; ?>">
@@ -31,7 +33,7 @@ require_once 'views/header.php';
             <label for="idUser" class='font-weight-bold'>ID de l'admin</label>
             <select name="idUser" id="idUser" class="form-control">
                 <option selected disabled value="0">Choisir un id</option>
-                
+<!--                on affiche les différents status-->
                 <?php foreach ($userList as $user) { ?>
                     <option value="<?= $user->id ?>">
                         <?= $user->firstName . ' ' . $user->lastName ?>

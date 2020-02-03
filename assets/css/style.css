@@ -231,42 +231,6 @@ span {
     background-size: cover;
     background-attachment: local, fixed;
 }
-/*Galerie*/
-#galerieMain {
-    overflow-x: hidden;
-}
-.imgLink {
-    display: block;
-    width: 300px;
-    height: 225px;
-    background-image: url("../img/img_5034.jpg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    text-decoration: none !important;
-    text-shadow: 1px 1px 2px black;
-    transition: 0.5s is ease-in-out;
-}
-.darkOverlay{
-    display: block;
-    position: absolute;
-    background-color: black;
-    width: 300px;
-    height: 225px;
-    opacity: 0;
-    transition: opacity .2s;
-}
-.darkOverlay:hover {
-    opacity: 0.5 !important;
-}
-.titleImg {
-    text-decoration: none;
-    font-family: 'Dosis', sans-serif;
-    color: #212529;
-}
-.titleImg:hover {
-    color: #212529; 
-}
 /*about us*/
 .descript-img1 {
     background-image: url("../img/img_6809.jpg");

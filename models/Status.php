@@ -14,7 +14,7 @@ class Status {
             die($ex->getMessage());
         }
     }
-    
+    //méthodes permettant d'afficher les informations d'un statut
     public function getIdStatus() {
         return $this->idStatus;
     }
@@ -26,7 +26,7 @@ class Status {
     public function setIdStatus($idStatus) {
         $this->id = (int) $idStatus;
     }
-    
+    //méthodes permettant de récupérer tous les statuts
     public function getAllStatus() {
         $sql = 'SELECT `idStatus`, `name` FROM `status`';
         $statusRequest = $this->db->query($sql);
